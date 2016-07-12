@@ -72,7 +72,7 @@
     <div class="calculator-container">
         <div class="result" id="result">0</div>
         <div class="buttons">
-            <span class="button resetBtn" onclick="clear();">AC</span>
+            <span class="button resetBtn" onclick="resetCalculator();">AC</span>
             <span class="button negative operator">+/-</span>
             <span class="button operator percent">%</span>
             <span class="button operator" onclick="operatorPressed('/');">/</span>
@@ -106,7 +106,8 @@
 <script type="text/javascript">
     var operand1= undefined, operand2= undefined, operator=undefined;
     var concatNumberOnScreen= undefined, result = undefined;
-    function clearNumber(){
+
+    function resetCalculator(){
         document.getElementById("result").innerHTML = "0";
         operand1= undefined;
         operand2= undefined;
