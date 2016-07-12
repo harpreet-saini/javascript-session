@@ -70,36 +70,118 @@
     <h2>Example</h2>
     <!--Example starts here -->
     <div class="calculator-container">
-        <div class="result" id="result">10</div>
+        <div class="result" id="result">0</div>
         <div class="buttons">
-            <span class="button resetBtn">AC</span>
+            <span class="button resetBtn" onclick="clear();">AC</span>
             <span class="button negative operator">+/-</span>
             <span class="button operator percent">%</span>
-            <span class="button operator">/</span>
-            <span class="button number">7</span>
-            <span class="button number">8</span>
-            <span class="button number">9</span>
-            <span class="button operator">*</span>
-            <span class="button number">4</span>
-            <span class="button number">5</span>
-            <span class="button number">6</span>
-            <span class="button operator">-</span>
-            <span class="button number">1</span>
-            <span class="button number">2</span>
-            <span class="button number">3</span>
-            <span class="button operator">+</span>
-            <span class="button number zero-btn">0</span>
+            <span class="button operator" onclick="operatorPressed('/');">/</span>
+            <span class="button number" onclick="numberPressed(7);">7</span>
+            <span class="button number" onclick="numberPressed(8);">8</span>
+            <span class="button number" onclick="numberPressed(9);">9</span>
+            <span class="button operator" onclick="operatorPressed('*');">*</span>
+            <span class="button number" onclick="numberPressed(4);">4</span>
+            <span class="button number" onclick="numberPressed(5);">5</span>
+            <span class="button number" onclick="numberPressed(6);">6</span>
+            <span class="button operator" onclick="operatorPressed('-');">-</span>
+            <span class="button number" onclick="numberPressed(1);">1</span>
+            <span class="button number" onclick="numberPressed(2);">2</span>
+            <span class="button number" onclick="numberPressed(3);">3</span>
+            <span class="button operator" onclick="operatorPressed('+');">+</span>
+            <span class="button number zero-btn" onclick="numberPressed(0);">0</span>
             <span class="button number dot">.</span>
-            <span class="button  operator">=</span>
+            <span class="button  operator" onclick="operatorPressed('=');">=</span>
         </div>
     </div>
     <!--Example end here -->
     <div class="section example-description">
         <ul>
-            <li class="item">Calculator is only UI based.</li>
-            <li class="item">No javascript is included.</li>
+            <li class="item">Calculator is only for +, -, * and / operations.</li>
+            <li class="item">BODMAS rule is not considered.</li>
+            <li class="item">AC button resets the calculator. </li>
         </ul>
     </div>
 </div>
+
+<script type="text/javascript">
+    var operand1= undefined, operand2= undefined, operator=undefined;
+    var concatNumberOnScreen= undefined, result = undefined;
+    function clearNumber(){
+        document.getElementById("result").innerHTML = "0";
+        operand1= undefined;
+        operand2= undefined;
+        operator=undefined;
+        concatNumberOnScreen= undefined;
+        result = undefined;
+    }
+
+    function handleNumbersAndDisplayOnScreen(num){
+
+        /* If operator is undefined, it means this is our first operand; else its second operand */
+        /* num undefined is checked for 1 vs 123 */
+        if(operator == undefined) {
+            if(operand1 == undefined)
+                operand1 = num.toString();
+            else
+                operand1+= num.toString();
+
+            concatNumberOnScreen = operand1;
+        }
+        else{
+            if(operand2 == undefined)
+                operand2 = num.toString();
+            else
+                operand2+= num.toString();
+
+            concatNumberOnScreen = operand2;
+        }
+
+        document.getElementById("result").innerHTML = concatNumberOnScreen;
+
+    }
+
+    function numberPressed(num) {
+        handleNumbersAndDisplayOnScreen(num);
+    }
+
+    function operatorPressed(op) {
+        console.log(" Num1=>" + operand1 + " Num2=>" + operand2 + " Operator=>" + operator);
+
+            switch (operator) {
+                case '+':
+                    result = Number(operand1) + Number(operand2);
+                    break;
+                case '-':
+                    result = Number(operand1) - Number(operand2);
+                    break;
+                case '*':
+                    result = Number(operand1) * Number(operand2);
+                    break;
+                case '/':
+                    result = Number(operand1) / Number(operand2);
+                    break;
+                case '=':
+                    if(operator == '+')
+                        result = Number(operand1) + Number(operand2);
+                    else if(operator == '-')
+                        result = Number(operand1) - Number(operand2);
+                    else if(operator == '*')
+                        result = Number(operand1) * Number(operand2);
+                    else if(operator == '/')
+                        result = Number(operand1) / Number(operand2);
+                    break;
+            }
+
+            if(operator == undefined){}
+            else {
+                document.getElementById("result").innerHTML = result;
+                operand1 = result;
+                operand2 = undefined;
+            }
+
+            operator = op;
+
+    }
+</script>
 </body>
 </html>
