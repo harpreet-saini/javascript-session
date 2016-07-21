@@ -1,5 +1,0 @@
-### Varaibles, DataTypes
-- Variables
-- DataTypes
-
-

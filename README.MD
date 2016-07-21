@@ -1,10 +1,7 @@
 # JavaScript Session
 
-- How it works
-- Why single threaded?
-- Variable, Data types & scope
-- Date & Math object
-- Event handlers & listeners
-- Exception handling
-- Forms
-- Workshop.
+- Section 1 ==> Variable, Data types & scope
+- Section 2 ==> Functions, Date, Math object, Exception Handling
+- Section 3 ==> Event handlers & listeners, Forms
+- Section 4 ==> How it works?
+- Workshop ==> Calculator
