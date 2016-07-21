@@ -15,9 +15,10 @@
 
 <div class="section description">
     <ul>
-        <li class="item">The scope changes inside functions.</li>
-        <li class="item">Variables declared within a  function, become local to the function.</li>
-        <li class="item">A variable declared outside a function, becomes GLOBAL.</li>
+        <li class="item">JavaScript has function scope: the scope changes inside functions.</li>
+        <li class="item">LOCAL Scope: Variables declared within a  function, become local to the function.</li>
+        <li class="item">GLOBAL Scope: Variables declared outside a function, becomes global.</li>
+        <li class="item">Note: If you assign a value to a variable that has not been declared, it will automatically become a GLOBAL variable.</li>
     </ul>
 </div>
 <div class="section example">
@@ -33,8 +34,6 @@
     </div>
     <script>
         var x=10, y=20, answer;
-        answer = Number(x) + Number(y);
-        document.getElementById("globalAnswer").innerHTML = answer;
 
         function calculate() {
             var a = document.getElementById("no1").value;
@@ -42,6 +41,9 @@
 
             answer = Number(a) + Number(b);
             document.getElementById("localAnswer").innerHTML = answer;
+
+            answer = Number(x) + Number(y);
+            document.getElementById("globalAnswer").innerHTML = answer;
         }
 
         function sum()
@@ -54,7 +56,7 @@
                 document.getElementById("localAnswer").innerHTML = answer;
             }
             catch(ex){
-                alert("Error " + ex.message);
+                alert("Error ==> " + ex.message);
             }
         }
     </script>
@@ -62,7 +64,7 @@
 
     <div class="section example-description">
         <ul>
-            <li class="item">a and b are local variables.</li>
+            <li class="item">Since a and b are local variables, Sum() function will give error for variables not defined. </li>
             <li class="item">Local variables have local scope: They can only be accessed within the function.</li>
             <li class="item"> A global variable has global scope: All scripts and functions on a web page can access it.</li>
             <li class="item">All global variables belong to the window object.</li>

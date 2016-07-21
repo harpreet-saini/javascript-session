@@ -1,5 +1,5 @@
 ### Section 2
-- Functions
+- Functions (Hoisting)
 - Date & Math object
 - Exception Handling (try, catch, throw, finally)
 

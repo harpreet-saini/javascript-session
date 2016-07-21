@@ -1,6 +1,9 @@
-### Form Submit
+### Section 3
 
-##### Run following commands
-- npm install express
-- npm install body-parser
-- node myserver.js
+- Events handling
+- Events bubbling & capturing
+- Form Submit
+    (Run following commands)
+    - npm install express
+    - npm install body-parser
+    - node myserver.js

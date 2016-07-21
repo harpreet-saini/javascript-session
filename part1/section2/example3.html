@@ -37,7 +37,7 @@
 
     <div class="section example-description">
         <ul>
-            <li class="item">adddlert is typo error in the try block i.e. its a valid function name.</li>
+            <li class="item">adddlert is typo error in the try block i.e. its not a valid function name.</li>
             <li class="item">catch block catches the error.</li>
         </ul>
     </div>
@@ -46,8 +46,8 @@
 <div class="section example">
     <h2>Example 2</h2>
     <!--Example starts here -->
-    <input id="number1" type="text" min="5" max="10" />
-    <input id="number2" type="text" min="5" max="10" />
+    <input id="number1" type="text" />
+    <input id="number2" type="text" />
     <input type="button" value="Divide" onclick="division();" />
     <p id="division">Division is = </p>
     <p id="message">???</p>
@@ -61,11 +61,11 @@
 
             x = document.getElementById("number1").value;
             y = document.getElementById("number2").value;
+
+
             try {
                 if(y == 0) throw "division by zero !!";
                 if(isNaN(x) || isNaN(y)) throw "not a number !!";
-                x = Number(x);
-                y = Number(y);
                 division.innerHTML = x/y;
             }
             catch(err) {
@@ -87,5 +87,4 @@
 </div>
 
 </body>
-</html>
 </html>
