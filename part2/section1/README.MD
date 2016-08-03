@@ -1,5 +1,6 @@
 #Object
 #Binding
-bind
-call
-apply
+
+1. bind
+1. call
+1. apply
