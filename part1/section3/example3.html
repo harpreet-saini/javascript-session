@@ -38,10 +38,10 @@
       document.getElementById('d2').addEventListener("click", myclick, true);
       document.getElementById('d3').addEventListener("click", myclick, true);
 
-      //Event bubbling
-      document.getElementById('d1').addEventListener("click", myclick1, false);
-      document.getElementById('d2').addEventListener("click", myclick1, false);
-      document.getElementById('d3').addEventListener("click", myclick1, false);
+      // //Event bubbling
+      // document.getElementById('d1').addEventListener("click", myclick1, false);
+      // document.getElementById('d2').addEventListener("click", myclick1, false);
+      // document.getElementById('d3').addEventListener("click", myclick1, false);
     }
 
 
@@ -51,7 +51,7 @@
       this.style.background = 'black';
       this.style.color = 'white';
       //Stop propagation, I know how to handle this event
-      //event.stopPropagation();
+      event.stopPropagation();
     }
 
     function myclick1(event) {
