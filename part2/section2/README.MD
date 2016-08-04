@@ -1,1 +1,6 @@
-#JavaScript Closures
+#modifiers
+- public
+- private
+- static
+
+

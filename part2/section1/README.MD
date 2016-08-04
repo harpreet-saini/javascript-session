@@ -1,6 +1,6 @@
-#Object
-#Binding
+# Object Prototype & Inheritance
+- How to create an object prototype
+- How to add a member variable/method after creating an object prototype
+- Inheritance - Create a class and its object; then extend it
 
-1. bind
-1. call
-1. apply
+
